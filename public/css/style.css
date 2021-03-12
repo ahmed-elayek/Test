@@ -1,0 +1,31 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    padding-top: 3.5rem;
+  }
+footer{
+      margin-top: 100px;
+  }
+.labl {
+    display : block;
+    width: 400px;
+}
+.labl > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.labl > input + div{ /* DIV STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    background-color: #ffd6bb;
+    border: 1px solid #ff6600;
+}
+.addcoursebutton{
+    background-color: silver;
+    color:whitesmoke;
+}
+
+ul#menu li {
+  display:inline;
+}

@@ -1,0 +1,50 @@
+<h2 class="page-header">Register</h2>
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+<form method="POST" action="/users/register">
+<div class="form-group">
+    <label> Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+</div>
+<div class="form-group">
+    <label> Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">   
+</div>
+</label>
+<div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control"
+    placeholder="Email" name="email">
+</div>
+<div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control"
+    placeholder="Password" name="password">
+</div>
+<div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control"
+    placeholder="Password" name="password2">
+</div>
+
+ <label>Before Submitting Choose one of Student and Teacher Declare yourself Student is the Default ..</label>
+ <div class="form-group">
+<label class="labl">
+    <input type="radio"  class="form-control"
+     placeholder="student" name="radioname" value="student" checked="checked"/>
+    <div>Student</div>
+</label>
+</div>
+<div class="form-group">
+<label class="labl">
+    <input type="radio" class="form-control"
+    placeholder="teacher" name="radioname" value="teacher" />
+    <div>Teacher</div>
+    </label>
+    </div>
+    <br></br>
+<button type="submit" class="btn btn-default"> Submit</button>
+</form>

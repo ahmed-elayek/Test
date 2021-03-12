@@ -1,0 +1,35 @@
+<h2 class="page-header"> Dashboard</h2>
+<p> Welcome to your Dashboard</p>
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+<form method="POST" action="/addcourse">
+<div class="form-group">
+    <label> Course Name</label>
+    <input type="text" class="form-control" placeholder="CourseName" name="name">
+</div>
+<div class="form-group">
+    <label> Number of Chapters</label>
+    <input type="number" class="form-control" placeholder="ChapterNumber" name="chapternumber">   
+</div>
+</label>
+<button type="submit" class="btn addcoursebutton"> Add Course</button>
+<section class="get">
+    <h3>Get Added Courses</h3>
+    <a href="/get-courses" style="color: red">LOAD Course List</a>
+            <div style="padding-left: 20px">
+                {{# each items }}
+                <li>
+                    <article class="item">
+                      <a href="/redirect/{{this.name}}/{{this.chapternumber}}"><div>name: {{ this.name }}</div></a>
+                        <div>chapternumber: {{ this.chapternumber }}</div>
+                        <a class="btn btn-danger delete-course" href="#" course-id={{this._id}}>Delete</a>
+                    </article>
+                </li>
+                {{/each}}
+            </div>
+</section>
+</form>
+

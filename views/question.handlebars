@@ -1,0 +1,78 @@
+<h2 class="page-header"> Adding Question Dashboard</h2>
+<p> add questions</p>
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+
+<script type="text/javascript">
+var cha=document.getElementById("chanumb");
+var num=data.num;
+for(int i=0;i<num;i++)
+{
+    var newOption=document.createElement("option");
+    newOption.value=i;
+    newOption.innerHTML=i;
+    cha.options.add(newOption);
+}
+</script>
+<form method="POST" action="/addquestion">
+<div class="form-group">  
+    <label> Course Name</label>
+    <input type="text" class="form-control" value="{{data.name}}" name="name" readonly>
+</div>
+<div class="form-group">
+    <label> Number of Chapter</label>
+    
+    <select id="chanumb" name="chanumb">
+        {{#each data.num}}
+         <option value="{{this}} ">{{this}} </option>
+        {{/each}}
+    </select>
+   
+   <!-- <input type="number" class="form-control" placeholder="ChapterNumber" name="chapternumber">   -->
+</div>
+<div class="form-group">
+    <label> Question Difficulty</label>
+    <select id="difficulty" name="difficulty">
+        <option value="difficult ">difficult </option>
+        <option value="simple">simple</option>
+    </select>
+</div>
+<div class="form-group">
+    <label> Question Objective</label>
+     <select id="objective" name="objective">
+        <option value="reminding ">reminding </option>
+        <option value="understanding">understanding</option>
+        <option value="creativity">creativity</option>
+    </select>
+</div>
+<div class="form-group">
+    <label> Question Title</label>
+    <input type="text" class="form-control" placeholder="QuestionTitle" name="questiontitle">
+</div>
+<div class="form-group">
+    <label> First Answer</label>
+    <input type="text" class="form-control" placeholder="FirstAnswer" name="firstanswer">
+</div>
+<div class="form-group">
+    <label> Second Answer</label>
+    <input type="text" class="form-control" placeholder="SecondAnswer" name="secondanswer">
+</div>
+<div class="form-group">
+    <label> Third Answer</label>
+    <input type="text" class="form-control" placeholder="ThirdAnswer" name="thirdanswer">
+</div>
+<div class="form-group">
+    <label> Correct Answer</label>
+    <select id="correct" name="correct">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+</label>
+<button type="submit" class="btn addcoursebuttont"> Add Question</button>
+</form>
+

@@ -1,0 +1,15 @@
+<h2 class="page-header"> Dashboard</h2>
+<p> Welcome to your Dashboard Student</p>
+<section class="get">
+    <h3>Get Added Exams</h3>
+    <a href="/get-exams" style="color: red">LOAD Exams List</a>
+            <div style="padding-left: 20px">
+                {{# each items }}
+                <li>
+                    <article class="item">
+                      <a href="/redirecttoexam/{{this.examname}}"><div>name: {{ this.examname }}</div></a>
+                    </article>
+                </li>
+                {{/each}}
+            </div>
+</section>

@@ -1,0 +1,41 @@
+<h2 class="page-header">Creating The Exam Dashboard</h2>
+<p> creat exam</p>
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+
+<form method="POST" action="/addexam">
+<div class="form-group">  
+    <label> Exam Name</label>
+    <input type="text" class="form-control" value="{{examnamedata}}" name="name" readonly>
+</div>
+<div class="form-group">
+    <label>Number of Questions Per Chapter</label>
+    <input type="number" class="form-control" placeholder="QuestionsNumber" name="questionsnumber">
+</div>
+<div class="form-group">
+    <label> Simple Questions Number</label>
+    <input type="number" class="form-control" placeholder="SimpleNumbers" name="simplenumbers">
+</div>
+<div class="form-group">
+    <label> Difficult Questions Number</label>
+    <input type="number" class="form-control" placeholder="DifficultNumbers" name="difficultnumbers">
+</div>
+<div class="form-group">
+    <label> Reminding Question Numbers</label>
+    <input type="number" class="form-control" placeholder="RemindingNumbers" name="remindingnumbers">
+</div>
+<div class="form-group">
+    <label> Understanding Question Numbers</label>
+    <input type="number" class="form-control" placeholder="UnderstandingNumbers" name="understandingnumbers">
+</div>
+<div class="form-group">
+    <label> Creative Question Numbers</label>
+    <input type="number" class="form-control" placeholder="CreativeNumbers" name="creativenumbers">
+</div>
+</label>
+<button type="submit" class="btn addcoursebuttont"> Add Exam</button>
+</form>
+
